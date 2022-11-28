@@ -1,0 +1,279 @@
+/* © Victor Loots, 2022
+/*
+
+/*
+/* Variabelen */
+:root {
+  --font_titel: 'Karma', Georgia, serif;
+  --font_subtitel: 'Marmelad', Verdana, sans-serif;
+  --font-brood: 'Marmelad', Verdana, sans-serif;
+  --kleur_blauw: #572eea;
+  --kleur_blauw_licht: #5b5be8;
+  --kleur_zwart: #000;
+  --kleur_wit: #ebeae0;
+  --kleur_roze: #ff5252;
+  --kleur_gebroken_wit: #fff;
+
+
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+img {
+  display: block;
+}
+
+
+/*
+/* Standards */
+html {
+  font-size: 62.5%;
+  /* (62.5/100) * 16px = 10px */
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  color: var(--kleur_zwart);
+  font-family: var(--font-brood);
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+#container {
+  position: relative;
+}
+
+
+#nav_button_closed {
+  background-color: var(--kleur_blauw);
+  background-image: url(../img/SVG/wiggle.svg),
+    url(../img/SVG/wiggle.svg),
+    url(../img/SVG/wiggle.svg);
+  background-position: center 20%,
+    center 35%,
+    center 50%;
+}
+
+#nav_button_opened {
+  background-color: var(--kleur_blauw);
+  background-image: url(../img/SVG/close.svg);
+  background-position: center 20%;
+
+}
+
+.nav_button {
+  position: fixed;
+  bottom: -70px;
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 200px;
+  border-radius: 40px 40px 0 0;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  z-index: 2;
+}
+
+.nav_button:hover {
+  cursor: pointer;
+}
+
+.verborgen {
+  display: none;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#nav_links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--kleur_blauw_licht);
+  height: 100vh;
+  width: 100%;
+  padding: 5rem;
+}
+
+#nav_links ul {
+  list-style: none;
+}
+
+#nav_links ul li {
+  padding: 2rem 0;
+}
+
+#nav_links ul li a {
+  text-decoration: none;
+  color: var(--kleur_zwart);
+  font-size: 3rem;
+  font-weight: 700;
+
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background_header {
+  background-image: url(../img/big/red-room-test-0012.jpg);
+}
+
+.background {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header h1 {
+  text-align: center;
+  color: var(--kleur_gebroken_wit);
+  font-size: 8rem;
+}
+
+main .article {
+  padding: 11rem 5vh;
+}
+
+main h2 {
+  font-size: 4rem;
+  padding: 2rem 0 6rem 0;
+}
+
+main h2::after {
+  content: " ";
+  display: block;
+  border-bottom: var(--kleur_zwart) solid 3px;
+  height: 4px;
+  width: 4rem;
+  padding: 1rem 0;
+}
+
+main h4 {
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+main p {
+  font-size: 1.7rem;
+  padding: 1rem 0;
+}
+
+.background_main {
+  height: 57vh;
+}
+
+.background_bubbleroom {
+  background-image: url(../img/big/Verner-Panton-7.jpg);
+
+}
+
+.background_lamps {
+  background-image: url(../img/big/louis-poulsen-panthella-mini-bordslampa.jpg);
+
+}
+
+.background_redroom {
+  background-image: url(../img/big/Red-room-0221.jpg);
+
+}
+
+
+footer {
+  color: var(--kleur_roze);
+  background-color: var(--kleur_zwart);
+  display: flex;
+  justify-content: space-around;
+  font-family: var(--font_subtitel);
+  padding: 2rem 0 6rem 0;
+}
+
+@media (min-width: 700px) {
+  body {
+    background-color: var(--kleur_blauw);
+  }
+
+  #container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 0;
+
+  }
+
+  #nav_button_closed,
+  #nav_button_opened {
+    display: none;
+  }
+
+  #nav_links {
+    background-color: transparent;
+    display:contents;
+    text-align: center;
+  }
+
+  #nav_links ul li {
+    padding: 2rem;
+    display: inline;
+    
+  }
+
+  #nav_links ul li a {
+    color: var(--kleur_wit);
+    
+  }
+
+  .grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .article_1 {
+    background-color: var(--kleur_roze);
+    grid-area: 1/1/2/2;
+  }
+
+  .background_bubbleroom {
+    grid-area: 1/2/2/3;
+  }
+
+  .article_2 {
+    background-color: var(--kleur_wit);
+    grid-area: 2/1/3/2;
+  }
+
+  .background_lamps {
+    grid-area: 2/2/3/3;
+  }
+
+  .article_3 {
+    background-color: var(--kleur_blauw_licht);
+    grid-area: 3/1/4/2;
+  }
+
+  .background_redroom {
+    grid-area: 3/2/4/3;
+
+  }
+  main .article {
+    padding: 11rem 15rem 11rem 5rem;
+  }
+
+  .background_main {
+    height: 100%;
+  }
+}
